@@ -6,7 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ysabeau+Infant:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fasthand&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
 
 * {
     margin: 0;
@@ -36,11 +36,18 @@
 
 .header {
     background-attachment: fixed;
-    background-image: url(/assets/backround/header-background-img.jpg);
+    background-image: url(/assets/background/header-background-img.jpg);
     background-position: center;
-    background-repeat: repeat-y;
-    background-size: auto;
-    min-height: 150px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-height: 15vh;
+
+    text-align: center;
+    padding-top: 20px;
+    font-size: 100px;
+    color: white;
+    font-family: 'Ysabeau SC', sans-serif;
+    cursor: default;
 }
 
 .header p {
@@ -56,14 +63,15 @@
 footer {
     background-color: #2e4051;
     position: relative;
-    height: 35vh;
     display: flex;
 }
 
 .footer-contents {
-    height: 30vh;
+    height: 20vh;
     color: black;
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .copyright {
@@ -73,23 +81,22 @@ footer {
 }
 
 .social-media-icons {
-    padding: 15px;
+    padding: 5px;
     text-decoration: none;
 }
 
 .social-media-icons img {
-    height: 40px;
-    padding: 15px;
+    height: 25px;
+    padding: 5px;
 }
 
 .flowers {
     height: 20vh;
     width: 100%;
-    background: url('assets/backround/footer-background.png') repeat-x;
+    background: url('assets/background/footer-background.png') repeat-x;
     background-position: top;
-    position: absolute;
     bottom: 0;
-    animation: animate 80s linear infinite;
+    animation: animate 200s linear infinite;
 }
 
 @keyframes animate {
@@ -118,7 +125,7 @@ footer {
 
 .intro {
     padding: 5px;
-    flex: 45%;
+    flex: 49%;
     text-align: center;
 }
 
@@ -137,6 +144,10 @@ footer {
     border: 2px solid #D8BFD8;
     color: white;
     cursor: pointer;
+}
+
+.contact-me-button a {
+    text-decoration: none;
 }
 
 .buffer p {
@@ -159,7 +170,7 @@ footer {
 
 .about-me-header {
     background-attachment: fixed;
-    background-image: url(/assets/backround/header-background-img.jpg);
+    background-image: url(/assets/background/header-background-img.jpg);
     background-position: center;
     min-height: 10vh;
     flex-direction: row;
@@ -219,9 +230,9 @@ footer {
 
 .project-header {
     font-family: 'Tektur', cursive;
-    cursor: pointer;
     color: darkblue;
     font-size: 30px;
+    padding-top: 40px;
 }
 
 .project-header a {
@@ -230,12 +241,13 @@ footer {
 
 .project-header a:hover {
     color: #D8BFD8;
+    cursor: pointer;
 }
 
 .project-img {
     max-height: 40vh;
     border-radius: 5%;
-    border: 5px solid darkblue;
+    border: 2px solid darkblue;
 }
 
 .project-row {
@@ -258,4 +270,54 @@ footer {
 .project-column p {
     font-family: 'Ysabeau Infant', sans-serif;
     font-size: 20px;
+    padding-bottom: 40px;
+    cursor: default;
+}
+
+/********* RESUME *********/
+
+embed {
+    padding: 50px;
+}
+
+/********* CONTACT *********/
+
+.contact-me-section {
+    width: 100%;
+    min-height: 40vh;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-me-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 120px;
+    color: darkblue;
+}
+
+.contact-me-box {
+    text-align: center;
+    padding: 20px;
+    display: flex;
+}
+
+.contact-me-icons {
+    padding: 5px;
+    text-decoration: none;
+}
+
+.contact-me-icons li {
+    list-style-type: none;
+}
+
+.contact-me-icons h1 {
+    padding: 15px;
+}
+
+.contact-me-icons img {
+    height: 50px;
+    padding: 5px;
 }
