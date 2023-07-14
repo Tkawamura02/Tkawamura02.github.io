@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tektur&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Makasar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+Infant:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fasthand&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* NAVBAR */
+
+.navbar {
+    display: inline-flex;
+    min-height: 60px;
+}
+
+.navbar a{
+    font-family: 'Tektur', cursive;
+    padding: 15px;
+    font-size: 30px;
+    color: darkblue;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #D8BFD8;
+    color: white;
+    cursor: pointer;
+}
+
+.header {
+    background-attachment: fixed;
+    background-image: url(/assets/backround/header-background-img.jpg);
+    background-position: center;
+    background-repeat: repeat-y;
+    background-size: auto;
+    min-height: 150px;
+}
+
+.header p {
+    text-align: center;
+    font-size: 100px;
+    color: white;
+    font-family: 'Ysabeau SC', sans-serif;
+    cursor: default;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #2e4051;
+    position: relative;
+    height: 35vh;
+    display: flex;
+}
+
+.footer-contents {
+    height: 30vh;
+    color: black;
+    width: 100%;
+}
+
+.copyright {
+    color: white;
+    text-align: center;
+    cursor: default;
+}
+
+.social-media-icons {
+    padding: 15px;
+    text-decoration: none;
+}
+
+.social-media-icons img {
+    height: 40px;
+    padding: 15px;
+}
+
+.flowers {
+    height: 20vh;
+    width: 100%;
+    background: url('assets/backround/footer-background.png') repeat-x;
+    background-position: top;
+    position: absolute;
+    bottom: 0;
+    animation: animate 80s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+      background-position-x: 0;
+      background-position-x: -250rem;
+    }
+}
+
+/********* HOME PAGE *********/
+
+.buffer {
+    width: 100%;
+    min-height: 40vh;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.buffer img {
+    padding: 5px;
+    border-radius: 45px;
+}
+
+.intro {
+    padding: 5px;
+    flex: 45%;
+    text-align: center;
+}
+
+.contact-me-button {
+    background-color: white; 
+    color: darkblue; 
+    border: 2px solid darkblue;
+    padding: 10px;
+    font-family: 'Tektur', cursive;    
+    font-size: 30px;
+    border-radius: 2px;
+}
+
+.contact-me-button:hover {
+    background-color: #D8BFD8;
+    border: 2px solid #D8BFD8;
+    color: white;
+    cursor: pointer;
+}
+
+.buffer p {
+    text-align: left;
+    font-size: 35px;
+    cursor: default;
+}
+
+#intro-1 {
+    font-family: 'Tektur', cursive;
+    color: darkblue;
+}
+
+#intro-2 {
+    font-family: 'Raleway', sans-serif;
+    padding-bottom: 10px;
+}
+
+/* ABOUT ME */
+
+.about-me-header {
+    background-attachment: fixed;
+    background-image: url(/assets/backround/header-background-img.jpg);
+    background-position: center;
+    min-height: 10vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    text-align: center;
+    padding-top: 20px;
+    font-size: 60px;
+    color: white;
+    font-family: 'Ysabeau SC', sans-serif;
+    cursor: default;
+}
+
+/* ABOUT ME SECTION */
+
+.about-me {
+    min-height: 40vh;
+    text-align: center;
+}
+
+.about-me p {
+    font-size: 30px;
+    cursor: default;
+}
+
+.quote {
+    padding-top: 40px;
+    font-family: 'Lugrasimo', cursive;
+    color: darkblue;
+}
+
+.author {
+    padding-bottom: 5px;
+    font-family: 'Lugrasimo', cursive;
+    color: darkblue;
+}
+
+.about-me-description {
+    padding: 10px;
+    font-family: 'Ysabeau Infant', sans-serif;
+    font-size: 30px;
+    text-align: left;
+}
+
+.letter {
+    color: black;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+.about-me-letter {
+    padding-top: 10px;
+    font-family: 'Fasthand', cursive;
+}
+
+/********* PROJECTS PAGE *********/
+
+.project-header {
+    font-family: 'Tektur', cursive;
+    cursor: default;
+    color: darkblue;
+}
+
+.project-img {
+    max-height: 40vh;
+    border-radius: 5%;
+    border: 5px solid darkblue;
+}
+
+.project-row {
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-column {
+    padding: 5px;
+    text-align: center;
+    flex: 49%;
+}
+
+.project-column p {
+    font-family: 'Ysabeau Infant', sans-serif;
+    font-size: 20px;
+}
