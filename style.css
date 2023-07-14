@@ -221,10 +221,15 @@ footer {
     font-family: 'Tektur', cursive;
     cursor: pointer;
     color: darkblue;
+    font-size: 30px;
 }
 
 .project-header a {
     text-decoration: none;
+}
+
+.project-header a:hover {
+    color: #D8BFD8;
 }
 
 .project-img {
