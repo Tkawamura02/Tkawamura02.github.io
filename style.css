@@ -219,8 +219,12 @@ footer {
 
 .project-header {
     font-family: 'Tektur', cursive;
-    cursor: default;
+    cursor: pointer;
     color: darkblue;
+}
+
+.project-header a {
+    text-decoration: none;
 }
 
 .project-img {
