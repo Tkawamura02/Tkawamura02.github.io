@@ -135,12 +135,19 @@ footer {
 .buffer img {
     padding: 1vh;
     border-radius: 10%;
-    flex: 49%;
 }
 
 .intro {
     padding: 1em;
     text-align: center;
+    flex: 10%;
+}
+
+.about-me-row {
+    width: 50%;
+    min-height: 50vh;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .contact-me-button {
@@ -173,6 +180,7 @@ footer {
     font-family: 'Tektur', cursive;
     font-size: 5vh;
     color: darkblue;
+    padding: 0;
 }
 
 #intro-2 {
