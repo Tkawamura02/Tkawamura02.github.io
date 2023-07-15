@@ -218,18 +218,19 @@ footer {
 }
 
 .about-me p {
-    font-size: 3vh;
     cursor: default;
 }
 
 .quote {
     padding-top: 5vh;
+    font-size: 5vh;
     font-family: 'Lugrasimo', cursive;
     color: darkblue;
 }
 
 .author {
     padding-bottom: 2vh;
+    font-size: 5vh;
     font-family: 'Lugrasimo', cursive;
     color: darkblue;
 }
@@ -237,12 +238,13 @@ footer {
 .about-me-description {
     padding: 10px;
     font-family: 'Ysabeau Infant', sans-serif;
-    font-size: 30px;
+    font-size: 4vh;
     text-align: left;
 }
 
 .letter {
     color: black;
+    font-size: 5vh;
     padding-left: 5%;
     padding-right: 5%;
 }
@@ -254,7 +256,15 @@ footer {
 
 @media only screen and (max-width: 600px) {
     .about-me p {
-        font-size: 4vh;
+        font-size: 3vh;
+    }
+
+    .about-me-description {
+        font-size: 3vh;
+    }
+
+    .about-me-letter {
+        font-size: 3vh;
     }
 }
 
