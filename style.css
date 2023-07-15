@@ -89,12 +89,6 @@ footer {
     flex-direction: column;
 }
 
-.copyright {
-    color: white;
-    text-align: center;
-    cursor: default;
-}
-
 .social-media-icons {
     padding: 0.5vh;
     text-decoration: none;
@@ -303,7 +297,7 @@ footer {
 }
 
 .project-column {
-    padding: 1vh;
+    padding: 0.7vh;
     text-align: center;
     flex: 49%;
 }
@@ -311,8 +305,11 @@ footer {
 .project-column p {
     font-family: 'Ysabeau Infant', sans-serif;
     font-size: 3.5vh;
-    padding-bottom: 6vh;
     cursor: default;
+}
+
+.last-project {
+    padding-bottom: 6vh;
 }
 
 /********* RESUME *********/
@@ -334,7 +331,7 @@ embed {
 
 @media only screen and (max-width: 800px) {
     embed {
-        height: 60vh;
+        height: 40vh;
     }
 }
 
@@ -387,7 +384,7 @@ embed {
 
 @media only screen and (max-width: 600px) {
     .contact-me-quote {
-        font-size: 10vh;
+        font-size: 9vh;
         max-width: 80%;
     }
 
