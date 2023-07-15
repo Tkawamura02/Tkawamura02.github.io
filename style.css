@@ -292,7 +292,7 @@ footer {
 }
 
 .project-row {
-    width: 100%;
+    width: 90%;
     min-height: 50vh;
     display: flex;
     flex-wrap: wrap;
@@ -323,6 +323,8 @@ footer {
     padding-right: 20%;
     padding-top: 5%;
     padding-bottom: 5%;
+
+    min-height: 60vh;
 }
 
 embed {
