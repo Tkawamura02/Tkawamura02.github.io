@@ -320,13 +320,12 @@ footer {
 /********* RESUME *********/
 
 .buffer-resume {
-    overflow: hidden;
     padding-left: 20%;
     padding-right: 20%;
     padding-top: 5%;
     padding-bottom: 5%;
 
-    min-height: 60vh;
+    min-height: 40vh;
 }
 
 embed {
