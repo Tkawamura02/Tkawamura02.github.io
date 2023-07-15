@@ -54,9 +54,6 @@
     background-repeat: no-repeat;
     background-size: 100% 100%;
     min-height: 15vh;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    word-wrap: break-word;
 
     text-align: center;
     font-size: 5em;
@@ -67,6 +64,9 @@
 
 @media only screen and (max-width: 600px) {
     .header {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-wrap: break-word;
         font-size: 3em;
     }
 }
@@ -139,7 +139,6 @@ footer {
 /********* HOME PAGE *********/
 
 .buffer {
-    width: 100%;
     display: flex;
     flex-wrap: wrap;
     padding: 2vh;
@@ -150,13 +149,11 @@ footer {
 .buffer img {
     padding: 1vh;
     border-radius: 10%;
-    width: 60%;
-    max-width: 400px;
+    flex: 49%;
 }
 
 .intro {
     padding: 1em;
-    flex: 49%;
     text-align: center;
 }
 
@@ -188,32 +185,42 @@ footer {
 
 #intro-1 {
     font-family: 'Tektur', cursive;
-    font-size: 6vh;
+    font-size: 5vh;
     color: darkblue;
 }
 
 #intro-2 {
     font-family: 'Raleway', sans-serif;
-    font-size: 6.5vh;
+    font-size: 4vh;
     padding-bottom: 10px;
 }
 
 @media only screen and (max-width: 600px) {
+
     .buffer {
         padding: 1vh;
         min-height: 80vh;
+        display: inline-flex;
     }
     
     .buffer img {
         width: 70%;
     }
 
+    .contact-me-button {
+        font-size: 4vh;
+    }
+
     .contact-me-button:hover {
         padding: 1.5vh;
     }
     
+    #intro-1 {
+        font-size: 4vh;
+    }
+
     #intro-2 {
-        font-size: 5vh;
+        font-size: 3vh;
     }
 }
 
@@ -225,7 +232,7 @@ footer {
 }
 
 .about-me p {
-    font-size: 5.5vh;
+    font-size: 3vh;
     cursor: default;
 }
 
@@ -261,7 +268,7 @@ footer {
 
 @media only screen and (max-width: 600px) {
     .about-me p {
-        font-size: 4.5vh;
+        font-size: 4vh;
     }
 }
 
