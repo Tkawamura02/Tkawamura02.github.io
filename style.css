@@ -26,7 +26,7 @@
     font-family: 'Tektur', cursive;
     padding: 1.5vh;
     font-size: 1.8em;
-    color: darkblue;
+    color: #2e4051;
     text-decoration: none;
 }
 
@@ -45,7 +45,7 @@
         font-size: 1.3em;
         padding: 1vh;
         text-align: center;
-        border: 1px solid darkblue;
+        border: 1px solid #2e4051;
     }
 }
 
@@ -145,8 +145,8 @@ footer {
 
 .contact-me-button {
     background-color: white; 
-    color: darkblue; 
-    border: 1px solid darkblue;
+    color: #2e4051; 
+    border: 1px solid #2e4051;
     padding: 0.3em;
     font-family: 'Tektur', cursive;    
     font-size: 5vh;
@@ -157,11 +157,12 @@ footer {
     background-color: #D8BFD8;
     border: 2px solid #D8BFD8;
     cursor: pointer;
-    padding: 1.5vh;
+    padding: 1.4vh;
 }
 
 .contact-me-button a {
     text-decoration: none;
+    color: #2e4051;
 }
 
 .buffer p {
@@ -172,13 +173,14 @@ footer {
 #intro-1 {
     font-family: 'Tektur', cursive;
     font-size: 5vh;
-    color: darkblue;
+    color: #2e4051;
     padding: 0;
 }
 
 #intro-2 {
     font-family: 'Raleway', sans-serif;
     font-size: 4vh;
+    color: #2e4051;
     padding-bottom: 10px;
 }
 
@@ -240,10 +242,11 @@ footer {
     font-family: 'Ysabeau Infant', sans-serif;
     font-size: 4vh;
     text-align: left;
+    color: #2e4051;
 }
 
 .letter {
-    color: black;
+    color: #2e4051;
     font-size: 5vh;
     padding-left: 5%;
     padding-right: 5%;
@@ -272,13 +275,13 @@ footer {
 
 .project-header {
     font-family: 'Tektur', cursive;
-    color: darkblue;
     font-size: 30px;
     padding-top: 40px;
 }
 
 .project-header a {
     text-decoration: none;
+    color: #2e4051;
 }
 
 .project-header a:hover {
@@ -290,7 +293,7 @@ footer {
     max-height: 50vh;
     max-width: 95%;
     border-radius: 5%;
-    border: 2px solid darkblue;
+    border: 2px solid #2e4051;
 }
 
 .project-row {
@@ -311,6 +314,7 @@ footer {
     font-family: 'Ysabeau Infant', sans-serif;
     font-size: 3.5vh;
     cursor: default;
+    color: #2e4051;
 }
 
 .last-project {
