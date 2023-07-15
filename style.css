@@ -122,7 +122,6 @@ footer {
     display: flex;
     flex-wrap: wrap;
     padding: 2vh;
-    justify-content: center;
     align-items: center;
 }
 
@@ -186,9 +185,8 @@ footer {
 @media only screen and (max-width: 600px) {
 
     .buffer {
-        padding: 1vh;
-        min-height: 80vh;
-        display: inline-flex;
+        display: flex;
+        flex-direction: column;
     }
     
     .buffer img {
@@ -287,13 +285,10 @@ footer {
 
 .project-row {
     width: 90%;
-    min-height: 50vh;
     display: flex;
     flex-wrap: wrap;
     padding-left: 3%;
     padding-right: 3%;
-    justify-content: center;
-    align-items: center;
 }
 
 .project-column {
