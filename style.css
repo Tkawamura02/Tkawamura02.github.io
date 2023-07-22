@@ -20,8 +20,10 @@
     width: 100%;
 }
 
-.navbar a {
-    text-decoration: none;
+.navbar a:hover{
+    background-color: #D8BFD8;
+    color: white;
+    cursor: pointer;
 }
 
 .btn {
@@ -29,14 +31,7 @@
     padding: 1.5vh;
     font-size: 1.8em;
     color: #2e4051;
-    background-color: white;
-    border: none;
-}
-
-.active, .btn:hover, a:hover {
-    background-color: #D8BFD8;
-    color: white;
-    cursor: pointer;
+    text-decoration: none;
 }
 
 @media only screen and (max-width: 600px) {
