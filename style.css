@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Foldit:wght@500&display=swap');
+
 /**********************INDEX PAGE***********************/
 * {
     margin: 0;
@@ -6,6 +9,7 @@
   
   html {
     scroll-behavior: smooth;
+    cursor: default;
   }
   
   .row {
@@ -30,6 +34,10 @@
     }
     .navbar-toggler:focus {
       box-shadow: none;
+    }
+    #navbar-item {
+        font-size: 1.1em;
+        font-weight: bold;
     }
   
   #second-navbar {
@@ -64,7 +72,7 @@
   
   .hero-info {
     position: absolute;
-    line-height: 30vh;
+    line-height: 35vh;
     width: 100%;
     text-align: center;
   }
@@ -72,10 +80,22 @@
   .hero-info img {
     border: 10px solid rgba(0, 0, 0, 0.3);
   }
+
+  .hero-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    padding-top: 28vh;
+  }
   
   .break {
     background-color: #3F2E3E;
     min-height: 5vh;
+  }
+
+  .name {
+    font-family: 'Dancing Script', cursive;
+    font-size: 6vh;
   }
   
   /*MISSION*/
@@ -100,9 +120,18 @@
     border: 7px solid rgba(216, 191, 216, 0.3);
     margin-bottom: 20px;
   }
+
+  .carousel-control-prev {
+    background-color: #3F2E3E;
+  }
+
+  .carousel-control-next {
+    background-color: #3F2E3E;
+  }
   
   #mission-section h2 {
     color: #331D2C;
+    font-weight: bold;
   }
   
   #description {
@@ -117,6 +146,7 @@
   
   #skills-section h2 {
     color: white;
+    font-weight: bold;
   }
   
   .skills-icons {
@@ -161,6 +191,7 @@
   
   #contact-section h2 {
     color: #331D2C;
+    font-weight: bold;
   }
   
   #contact-card {
@@ -184,6 +215,10 @@
   #resume-btn a {
     text-decoration: none;
     color: white;
+  }
+
+  #resume-section h2 {
+    font-weight: bold;
   }
   
   /*FOOTER*/
@@ -246,12 +281,13 @@
   .github-info {
     background-color: #331D2C;
     color: beige;
-  }
-  
-  .github-info {
     padding: 0;
   }
-  
+
+  #github-img-row {
+    line-height: 17vh;
+  }
+
   #github-section img {
     border: 10px solid #331D2C;
       transform: scale(1);
@@ -323,6 +359,10 @@
   
   /*MEDIA*/
   @media (max-width: 600px)  {
+    .nav-link {
+        text-align: center;
+    }
+
     #second-navbar {
       display: none;
     }
