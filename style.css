@@ -347,6 +347,13 @@
     background-color: #EFE1D1;
     scroll-margin-top: 7.5vh;
   }
+
+  /*DATABASE*/
+  #database-section {
+    padding: 2vh 0 2vh 0;
+    background-color: #EFE1D1;
+    scroll-margin-top: 7.5vh;
+  }
   
   /*GAME*/
   #game-section {
