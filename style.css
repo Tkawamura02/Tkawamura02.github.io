@@ -276,7 +276,9 @@
   
   /*MEDIA*/
   @media (max-width: 600px)  {
-
+    .project-cards {
+      display: block;
+    }
   }
 
   @media (max-width: 750px)  {
