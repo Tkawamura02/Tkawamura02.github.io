@@ -1,17 +1,3 @@
-function typeWriter(i, speed, name, txt) {
-    if (i < txt.length) {
-        document.getElementById(name).innerHTML += txt.charAt(i);
-        i++;
-        setTimeout(function() {
-            typeWriter(i, speed, name, txt);
-        }, speed);
-    }
-}
-
-window.onload = function typeIntro() {
-    typeWriter(0, 50, "intro-hello", "hello world, it's tiffany.");
-}
-
 function switchTab(evt, name) {
     var i, x, tablinks;
     x = document.getElementsByClassName("tabs");
@@ -24,4 +10,30 @@ function switchTab(evt, name) {
     }
     document.getElementById(name).style.display = "block";
     evt.currentTarget.firstElementChild.className += " tab-border-highlight";
-  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  var p = document.getElementById('intro-hello');
+  p.innerHTML = '';
+  var n = 0;
+  var str = "hello world, it's tiffany.";
+
+  var typeTimer = setInterval(function() {
+    n = n + 1;
+    p.innerHTML = "> " + str.slice(0, n);
+    if (n === str.length) {
+      clearInterval(typeTimer);
+      p.innerHTML = "> " + str;
+      n = 0;
+      setInterval(function() {
+        if (n === 0) {
+          p.innerHTML = "> " + str + "|";
+          n = 1;
+        } else {
+          p.innerHTML = "> " + str;
+          n = 0;
+        }
+      }, 500);
+    }
+  }, 60);
+});
