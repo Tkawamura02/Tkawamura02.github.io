@@ -36,27 +36,6 @@
         animation: flip 1s ease;
     }
 
-    .navbar-toggler {
-      border: none;
-    }
-    .navbar-toggler:focus {
-      box-shadow: none;
-    }
-    #navbar-item { /*about and projects link*/
-        font-size: 1.1em;
-        font-weight: bold;
-    }
-
-    #navbar-item a {
-      text-decoration: none;
-      outline: none;
-      color: gray;
-    }
-  
-    #navbar-item a:hover {
-      color: #4D734C
-    }
-
   /*CONTACT*/
   #icons-col a, img {
     text-decoration: none;
@@ -97,6 +76,10 @@
     padding-top: 1vh;
   }
 
+  #about-me {
+    padding: 1vh 0 1vh 2vh;
+  }
+
   /*SECTIONS*/
   .sections {
     box-sizing: border-box;
@@ -131,6 +114,11 @@
   }
 
   /*EXPERIENCE*/
+  .four-tabs {
+    padding-top: 2vh;
+    padding-bottom: 3vh;
+  }
+
   .tab-container {
     padding: 0.01em 16px
   }
@@ -231,13 +219,14 @@
   }
 
   .projects-ind-cards:hover {
-    background-color: #051a1a;
+    background-color: #031010;
+    cursor: pointer;
   }
 
   .projects-ind-cards img {
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
-    height: 20vh;
+    height: 75%;
   }
 
   .projects-ind-cards h4 {
