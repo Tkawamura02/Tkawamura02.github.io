@@ -94,16 +94,16 @@
           <div class="four-tabs">
             <div class="tab-row">
               <a href="javascript:void(0)" onclick="switchTab(event, '00');">
-                <div class="tab-fourth tablink tab-bottombar tab-hover-light-grey tab-padding tab-border-highlight">00</div>
+                <div class="tab-fourth tablink tab-padding tab-bottombar tab-hover-light-grey tab-border-highlight">00</div>
               </a>
               <a href="javascript:void(0)" onclick="switchTab(event, '01');">
-                <div class="tab-fourth tablink tab-bottombar tab-hover-light-grey tab-padding">01</div>
+                <div class="tab-fourth tablink tab-padding tab-bottombar tab-hover-light-grey">01</div>
               </a>
               <a href="javascript:void(0)" onclick="switchTab(event, '02');">
-                <div class="tab-fourth tablink tab-bottombar tab-hover-light-grey tab-padding">02</div>
+                <div class="tab-fourth tablink tab-padding tab-bottombar tab-hover-light-grey">02</div>
               </a>
               <a href="javascript:void(0)" onclick="switchTab(event, '03');">
-                <div class="tab-fourth tablink tab-bottombar tab-hover-light-grey tab-padding">03</div>
+                <div class="tab-fourth tablink tab-padding tab-bottombar tab-hover-light-grey">03</div>
               </a>
             </div>
           </div>
@@ -175,11 +175,26 @@
       </section>
 
       <!-- Projects section-->
-      <section class="sections">
+      <section class="sections project-section">
         <h1 id="projects-title titles"> // my projects </h1>
+        <div class="tab2-container">
+          <div class="tab-row languages">
+            <a href="javascript:void(0)" onclick="switchTab2(event, 'All');">
+              <div class="tab2-fourth tablink2 tab-padding tab-bottombar tab-hover-light-grey highlight2">All</div>
+            </a>
+            <a href="javascript:void(0)" onclick="switchTab2(event, 'Web');">
+              <div class="tab2-fourth tablink2 tab-padding tab-bottombar tab-hover-light-grey">Web</div>
+            </a>
+            <a href="javascript:void(0)" onclick="switchTab2(event, 'Database');">
+              <div class="tab2-fourth tablink2 tab-padding tab-bottombar tab-hover-light-grey">Database</div>
+            </a>
+            <a href="javascript:void(0)" onclick="switchTab2(event, 'Java');">
+              <div class="tab2-fourth tablink2 tab-padding tab-bottombar tab-hover-light-grey">Java</div>
+            </a>
+          </div>
+        </div>
         <div class="project-cards">
-          <div class="project-cards-row">
-            <div class="projects-ind-cards pom-web">
+            <div class="projects-ind-cards web" style="display:show">
               <a target="_blank" href="https://github.com/virtualcommons/port-of-mars"> 
                 <!--
                   new project page
@@ -191,7 +206,7 @@
               <h4>PORT OF MARS</h4>
               <p>Web Development</p>
             </div>
-            <div class="projects-ind-cards pok-web">
+            <div class="projects-ind-cards web" style="display:show">
               <a target="_blank" href="https://github.com/Tkawamura02/pokemon_game"> 
                 <!--
                   new project page
@@ -202,7 +217,7 @@
               <h4>POKEMON COPYCAT</h4>
               <p>Web Development</p>
             </div>
-            <div class="projects-ind-cards music-database">
+            <div class="projects-ind-cards database" style="display:show">
               <a target="_blank" href="https://github.com/Tkawamura02/music-database"> 
                 <!--
                   new project page
@@ -213,9 +228,7 @@
               <h4>MUSIC DATABASE</h4>
               <p>SQL</p>
             </div>
-          </div>
-          <div class="project-cards-row">
-            <div class="projects-ind-cards hotel-database">
+            <div class="projects-ind-cards database" style="display:show">
               <a target="_blank" href="https://github.com/Tkawamura02/database-project"> 
                 <!--
                   new project page
@@ -226,7 +239,7 @@
               <h4>HOTEL DATABASE</h4>
               <p>SQL</p>
             </div>
-            <div class="projects-ind-cards scrabble-java">
+            <div class="projects-ind-cards java" style="display:show">
               <a target="_blank" href="https://github.com/Tkawamura02/Scrabble_Wizard"> 
                 <!--
                   new project page
@@ -237,7 +250,7 @@
               <h4>SCRABBLE</h4>
               <p>Java</p>
             </div>
-            <div class="projects-ind-cards address-java">
+            <div class="projects-ind-cards java" style="display:show">
               <a target="_blank" href="https://github.com/Tkawamura02/tts_final_project"> 
                 <!--
                   new project page
@@ -248,9 +261,7 @@
               <h4>ADDRESS BOOK</h4>
               <p>Java</p>
             </div>
-          </div>
-          <div class="project-cards-row">
-            <div class="projects-ind-cards pok-api-web">
+            <div class="projects-ind-cards web" style="display:show">
               <a target="_blank" href="https://github.com/Tkawamura02/pokemon-api"> 
                 <!--
                   new project page
@@ -262,7 +273,7 @@
               <h4>POKEMON API</h4>
               <p>Web Development</p>
             </div>
-            <div class="projects-ind-cards encouragement-web">
+            <div class="projects-ind-cards web" style="display:show">
               <a target="_blank" href="https://github.com/Tkawamura02/encouragement"> 
                 <!--
                   new project page
@@ -274,7 +285,7 @@
               <h4>ENCOURAGEMENTS</h4>
               <p>Web Development</p>
             </div>
-            <div class="projects-ind-cards hotel-web">
+            <div class="projects-ind-cards web" style="display:show">
               <a target="_blank" href="https://github.com/Tkawamura02/hotel-chateau"> 
                 <!--
                   new project page
@@ -286,9 +297,7 @@
               <h4>HOTEL</h4>
               <p>Web Development</p>
             </div>
-          </div>
-          <div class="project-cards-row">
-            <div class="projects-ind-cards to-do-web">
+            <div class="projects-ind-cards web" style="display:show">
               <a target="_blank" href="https://github.com/Tkawamura02/to_do_application"> 
                 <!--
                   new project page
@@ -300,7 +309,7 @@
               <h4>LIST</h4>
               <p>Web Development</p>
             </div>
-            <div class="projects-ind-cards tipping-web">
+            <div class="projects-ind-cards web" style="display:show">
               <a target="_blank" href="https://github.com/jalexandertech/TTS-Tip-Calculator"> 
                 <!--
                   new project page
@@ -312,7 +321,7 @@
               <h4>TIPPING</h4>
               <p>Web Development</p>
             </div>
-            <div class="projects-ind-cards dog-web">
+            <div class="projects-ind-cards web" style="display:show">
               <a target="_blank" href="https://github.com/Tkawamura02/dogs"> 
                 <!--
                   new project page
