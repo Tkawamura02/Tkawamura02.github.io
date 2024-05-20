@@ -210,6 +210,7 @@
     flex-wrap: wrap;
     gap: 20px;
     margin: 2vh 5vh 2vh 5vh;
+    justify-content: center;
   }
 
   .projects-ind-cards {
