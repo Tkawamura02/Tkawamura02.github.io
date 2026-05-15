@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects — Tiffany Kawamura</title>
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-hero {
+      padding: 80px 10vw 60px;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 5vw, 60px);
+      color: var(--text-h); margin-bottom: 12px;
+    }
+    .page-hero p { font-size: 17px; line-height: 1.7; max-width: 520px; }
+
+    /* ── FILTER ── */
+    .filter-bar {
+      display: flex; gap: 10px; flex-wrap: wrap;
+      padding: 36px 10vw 0;
+    }
+    .filter-btn {
+      padding: 8px 20px; border-radius: 20px; cursor: pointer;
+      font-size: 13px; font-weight: 600; font-family: inherit;
+      border: 1px solid rgba(77,115,76,.3); background: transparent;
+      color: var(--text); transition: all .2s; letter-spacing: .04em;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--green); color: #d4e8d4; border-color: var(--green);
+    }
+
+    /* ── GRID ── */
+    .projects-section { padding: 40px 10vw 80px; }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .project-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; overflow: hidden;
+      text-decoration: none; display: flex; flex-direction: column;
+      transition: border-color .2s, transform .2s;
+    }
+    .project-card:hover { border-color: var(--border-h); transform: translateY(-5px); }
+    .project-card.hidden { display: none; }
+
+    .project-thumb {
+      height: 148px; display: flex; align-items: center; justify-content: center;
+      font-size: 48px; color: var(--green); background: rgba(77,115,76,.07);
+      position: relative; overflow: hidden;
+    }
+    .project-thumb .overlay {
+      position: absolute; inset: 0;
+      background: rgba(5,31,32,.6);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity .2s;
+    }
+    .project-card:hover .overlay { opacity: 1; }
+    .overlay-text {
+      color: var(--text-h); font-size: 13px; font-weight: 600;
+      letter-spacing: .06em; display: flex; align-items: center; gap: 6px;
+    }
+
+    .project-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+    .project-cat {
+      font-size: 11px; font-weight: 700; letter-spacing: .1em;
+      color: var(--green); margin-bottom: 6px;
+    }
+    .project-body h3 { font-size: 15px; color: var(--text-h); font-weight: 700; margin-bottom: 8px; }
+    .project-body p { font-size: 13px; line-height: 1.6; color: var(--text); flex: 1; }
+
+    .project-footer {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 12px 20px; border-top: 1px solid var(--border);
+    }
+    .project-link {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 12px; color: var(--text); text-decoration: none;
+      transition: color .2s;
+    }
+    .project-link:hover { color: var(--green); }
+
+    /* ── FEATURED ── */
+    .featured-card {
+      grid-column: span 2;
+      flex-direction: row;
+    }
+    .featured-card .project-thumb { width: 260px; flex-shrink: 0; height: auto; min-height: 180px; }
+    .featured-card .project-body { padding: 28px; }
+    .featured-card h3 { font-size: 18px; }
+    .featured-badge {
+      display: inline-block; font-size: 10px; font-weight: 700;
+      letter-spacing: .1em; padding: 3px 10px; border-radius: 20px;
+      background: rgba(77,115,76,.15); color: var(--green);
+      border: 1px solid rgba(77,115,76,.3); margin-bottom: 8px;
+    }
+
+    @media (max-width: 700px) {
+      .featured-card { grid-column: span 1; flex-direction: column; }
+      .featured-card .project-thumb { width: 100%; height: 140px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html"><img src="img/leo.png" alt="Leo logo"></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="experience.html">Experience</a>
+    <a href="projects.html">Projects</a>
+  </div>
+  <div class="nav-socials">
+    <a href="https://www.instagram.com/tiffany.kawamura/" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+    <a href="https://www.linkedin.com/in/tiffanykawamura/" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+    <a href="mailto:tkawamura02@gmail.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
+    <a href="https://github.com/Tkawamura02" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+  </div>
+</nav>
+
+<div class="page-hero fade-up">
+  <div class="section-label">portfolio</div>
+  <h1>My Projects</h1>
+  <p>A collection of things I've built — from multiplayer games to databases to web apps.</p>
+</div>
+
+<div class="filter-bar fade-up-2">
+  <button class="filter-btn active" onclick="filterProjects('all', this)">All</button>
+  <button class="filter-btn" onclick="filterProjects('web', this)">Web Development</button>
+  <button class="filter-btn" onclick="filterProjects('sql', this)">SQL / Database</button>
+  <button class="filter-btn" onclick="filterProjects('java', this)">Java</button>
+</div>
+
+<section class="projects-section">
+  <div class="projects-grid" id="grid">
+
+    <!-- FEATURED -->
+    <a class="project-card featured-card" href="https://github.com/virtualcommons/port-of-mars" target="_blank" data-cat="web">
+      <div class="project-thumb">
+        <i class="bi bi-globe2"></i>
+        <div class="overlay"><div class="overlay-text"><i class="bi bi-github"></i> View on GitHub</div></div>
+      </div>
+      <div class="project-body">
+        <div class="featured-badge">Featured</div>
+        <div class="project-cat">Web Development</div>
+        <h3>Port of Mars</h3>
+        <p>A multiplayer social-science experiment game for ASU's Interplanetary Initiative. Built with TypeScript, Vue.js, Nuxt, Docker, PostgreSQL, Redis, and Elasticsearch. Drove over $3.4B in transaction volume.</p>
+        <div class="tags" style="margin-top:14px">
+          <span class="tag">TypeScript</span><span class="tag">Vue.js</span>
+          <span class="tag">Docker</span><span class="tag">PostgreSQL</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="project-card" href="https://github.com/Tkawamura02/pokemon_game" target="_blank" data-cat="web">
+      <div class="project-thumb">
+        <i class="bi bi-controller"></i>
+        <div class="overlay"><div class="overlay-text"><i class="bi bi-github"></i> View repo</div></div>
+      </div>
+      <div class="project-body">
+        <div class="project-cat">Web Development</div>
+        <h3>Pokemon Copycat</h3>
+        <p>A browser-based Pokemon-inspired game built with web technologies.</p>
+      </div>
+      <div class="project-footer">
+        <span class="project-link"><i class="bi bi-github"></i> Tkawamura02</span>
+      </div>
+    </a>
+
+    <a class="project-card" href="https://github.com/Tkawamura02/pokemon-api" target="_blank" data-cat="web">
+      <div class="project-thumb">
+        <i class="bi bi-lightning-charge"></i>
+        <div class="overlay"><div class="overlay-text"><i class="bi bi-github"></i> View repo</div></div>
+      </div>
+      <div class="project-body">
+        <div class="project-cat">Web Development</div>
+        <h3>Pokemon API</h3>
+        <p>A web app that consumes the PokeAPI, letting users search and explore Pokemon data.</p>
+      </div>
+      <div class="project-footer">
+        <span class="project-link"><i class="bi bi-github"></i> Tkawamura02</span>
+        <span class="project-link"><i class="bi bi-box-arrow-up-right"></i> Live site</span>
+      </div>
+    </a>
+
+    <a class="project-card" href="https://github.com/Tkawamura02/encouragement" target="_blank" data-cat="web">
+      <div class="project-thumb">
+        <i class="bi bi-chat-heart"></i>
+        <div class="overlay"><div class="overlay-text"><i class="bi bi-github"></i> View repo</div></div>
+      </div>
+      <div class="project-body">
+        <div class="project-cat">Web Development</div>
+        <h3>Encouragements</h3>
+        <p>A words-of-encouragement web app that delivers uplifting messages on demand.</p>
+      </div>
+      <div class="project-footer">
+        <span class="project-link"><i class="bi bi-github"></i> Tkawamura02</span>
+      </div>
+    </a>
+
+    <a class="project-card" href="https://github.com/Tkawamura02/hotel-chateau" target="_blank" data-cat="web">
+      <div class="project-thumb">
+        <i class="bi bi-house-heart"></i>
+        <div class="overlay"><div class="overlay-text"><i class="bi bi-github"></i> View repo</div></div>
+      </div>
+      <div class="project-body">
+        <div class="project-cat">Web Development</div>
+        <h3>Hotel Chateau</h3>
+        <p>A hotel landing page with full HTML/CSS layout and interactive features.</p>
+      </div>
+      <div class="project-footer">
+        <span class="project-link"><i class="bi bi-github"></i> Tkawamura02</span>
+      </div>
+    </a>
+
+    <a class="project-card" href="https://github.com/Tkawamura02/to_do_application" target="_blank" data-cat="web">
+      <div class="project-thumb">
+        <i class="bi bi-check2-square"></i>
+        <div class="overlay"><div class="overlay-text"><i class="bi bi-github"></i> View repo</div></div>
+      </div>
+      <div class="project-body">
+        <div class="project-cat">Web Development</div>
+        <h3>To-Do List</h3>
+        <p>A clean, interactive task management application built for the web.</p>
+      </div>
+      <div class="project-footer">
+        <span class="project-link"><i class="bi bi-github"></i> Tkawamura02</span>
+      </div>
+    </a>
+
+    <a class="project-card" href="https://github.com/jalexandertech/TTS-Tip-Calculator" target="_blank" data-cat="web">
+      <div class="project-thumb">
+        <i class="bi bi-cash-coin"></i>
+        <div class="overlay"><div class="overlay-text"><i class="bi bi-github"></i> View repo</div></div>
+      </div>
+      <div class="project-body">
+        <div class="project-cat">Web Development</div>
+        <h3>Tip Calculator</h3>
+        <p>A collaborative tip calculator with live percentage and split calculations.</p>
+      </div>
+      <div class="project-footer">
+        <span class="project-link"><i class="bi bi-github"></i> jalexandertech</span>
+      </div>
+    </a>
+
+    <a class="project-card" href="https://github.com/Tkawamura02/dogs" target="_blank" data-cat="web">
+      <div class="project-thumb">
+        <i class="bi bi-balloon-heart"></i>
+        <div class="overlay"><div class="overlay-text"><i class="bi bi-github"></i> View repo</div></div>
+      </div>
+      <div class="project-body">
+        <div class="project-cat">Web Development</div>
+        <h3>Dogs</h3>
+        <p>A fun web project showcasing dog breeds and images.</p>
+      </div>
+      <div class="project-footer">
+        <span class="project-link"><i class="bi bi-github"></i> Tkawamura02</span>
+      </div>
+    </a>
+
+    <!-- SQL -->
+    <a class="project-card" href="https://github.com/Tkawamura02/music-database" target="_blank" data-cat="sql">
+      <div class="project-thumb">
+        <i class="bi bi-music-note-beamed"></i>
+        <div class="overlay"><div class="overlay-text"><i class="bi bi-github"></i> View repo</div></div>
+      </div>
+      <div class="project-body">
+        <div class="project-cat">SQL / Database</div>
+        <h3>Music Database</h3>
+        <p>A relational database for querying and organizing music catalog data using SQL.</p>
+      </div>
+      <div class="project-footer">
+        <span class="project-link"><i class="bi bi-github"></i> Tkawamura02</span>
+      </div>
+    </a>
+
+    <a class="project-card" href="https://github.com/Tkawamura02/database-project" target="_blank" data-cat="sql">
+      <div class="project-thumb">
+        <i class="bi bi-building"></i>
+        <div class="overlay"><div class="overlay-text"><i class="bi bi-github"></i> View repo</div></div>
+      </div>
+      <div class="project-body">
+        <div class="project-cat">SQL / Database</div>
+        <h3>Hotel Database</h3>
+        <p>A hotel reservation database with relational schema design and complex queries.</p>
+      </div>
+      <div class="project-footer">
+        <span class="project-link"><i class="bi bi-github"></i> Tkawamura02</span>
+      </div>
+    </a>
+
+    <!-- Java -->
+    <a class="project-card" href="https://github.com/Tkawamura02/Scrabble_Wizard" target="_blank" data-cat="java">
+      <div class="project-thumb">
+        <i class="bi bi-grid-3x3"></i>
+        <div class="overlay"><div class="overlay-text"><i class="bi bi-github"></i> View repo</div></div>
+      </div>
+      <div class="project-body">
+        <div class="project-cat">Java</div>
+        <h3>Scrabble Wizard</h3>
+        <p>A Java implementation of a Scrabble helper that finds optimal word placements.</p>
+      </div>
+      <div class="project-footer">
+        <span class="project-link"><i class="bi bi-github"></i> Tkawamura02</span>
+      </div>
+    </a>
+
+    <a class="project-card" href="https://github.com/Tkawamura02/tts_final_project" target="_blank" data-cat="java">
+      <div class="project-thumb">
+        <i class="bi bi-person-lines-fill"></i>
+        <div class="overlay"><div class="overlay-text"><i class="bi bi-github"></i> View repo</div></div>
+      </div>
+      <div class="project-body">
+        <div class="project-cat">Java</div>
+        <h3>Address Book</h3>
+        <p>A Java-based contact and address book application with CRUD functionality.</p>
+      </div>
+      <div class="project-footer">
+        <span class="project-link"><i class="bi bi-github"></i> Tkawamura02</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<footer>
+  <p>Made with <span>&#9829;</span> by Tiffany Kawamura &nbsp;&middot;&nbsp; All rights reserved &copy; 2026</p>
+</footer>
+
+<script src="script.js"></script>
+<script>
+function filterProjects(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.project-card').forEach(card => {
+    if (cat === 'all' || card.dataset.cat === cat) {
+      card.classList.remove('hidden');
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+}
+</script>
+</body>
+</html>

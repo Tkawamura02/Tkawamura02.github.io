@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Experience — Tiffany Kawamura</title>
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-hero {
+      padding: 80px 10vw 60px;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 5vw, 60px);
+      color: var(--text-h); margin-bottom: 12px;
+    }
+    .page-hero p { font-size: 17px; line-height: 1.7; max-width: 520px; }
+
+    /* ── TIMELINE ── */
+    .timeline-section { padding: 72px 10vw; }
+    .timeline { display: flex; flex-direction: column; gap: 0; position: relative; }
+    .timeline::before {
+      content: '';
+      position: absolute; left: 17px; top: 0; bottom: 0;
+      width: 1px; background: var(--border);
+    }
+    .tl-item {
+      display: grid; grid-template-columns: 36px 1fr;
+      gap: 0 28px; margin-bottom: 48px;
+    }
+    .tl-dot {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--bg); border: 2px solid var(--green);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--green); font-size: 15px; flex-shrink: 0;
+      position: relative; z-index: 1; margin-top: 2px;
+    }
+    .tl-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 28px 32px;
+      transition: border-color .2s, transform .2s;
+    }
+    .tl-card:hover { border-color: var(--border-h); transform: translateX(4px); }
+    .tl-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+    .tl-title { font-size: 18px; font-weight: 700; color: var(--text-h); }
+    .tl-role { color: var(--green); font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+    .tl-date { font-size: 13px; color: var(--text); font-weight: 600; margin-bottom: 4px; }
+    .tl-loc { font-size: 13px; color: #4a6a5a; margin-bottom: 14px; }
+    .tl-loc i { margin-right: 4px; }
+    .tl-desc { font-size: 15px; line-height: 1.75; margin-top: 14px; }
+
+    /* ── EDUCATION ── */
+    .education-section { padding: 0 10vw 80px; }
+    .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+    .edu-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 28px;
+      transition: border-color .2s, transform .2s;
+    }
+    .edu-card:hover { border-color: var(--border-h); transform: translateY(-4px); }
+    .edu-icon { font-size: 28px; color: var(--green); margin-bottom: 14px; }
+    .edu-card h3 { font-size: 16px; font-weight: 700; color: var(--text-h); margin-bottom: 4px; }
+    .edu-card p { font-size: 14px; color: var(--text); }
+    .edu-card .year { font-size: 12px; color: var(--green); font-weight: 600; letter-spacing: .06em; margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html"><img src="img/leo.png" alt="Leo logo"></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="experience.html">Experience</a>
+    <a href="projects.html">Projects</a>
+  </div>
+  <div class="nav-socials">
+    <a href="https://www.instagram.com/tiffany.kawamura/" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+    <a href="https://www.linkedin.com/in/tiffanykawamura/" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+    <a href="mailto:tkawamura02@gmail.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
+    <a href="https://github.com/Tkawamura02" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+  </div>
+</nav>
+
+<div class="page-hero fade-up">
+  <div class="section-label">career</div>
+  <h1>My Experience</h1>
+  <p>A timeline of roles where I've shipped real products, mentored students, and grown as an engineer.</p>
+</div>
+
+<section class="timeline-section">
+  <div class="timeline">
+
+    <div class="tl-item fade-up-2">
+      <div class="tl-dot"><i class="bi bi-people-fill"></i></div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <div>
+            <div class="tl-title">Auditec Solutions</div>
+            <div class="tl-role">Junior ETL Developer</div>
+            <div class="tl-date">2025 — Present</div>
+            <div class="tl-loc"><i class="bi bi-geo-alt-fill"></i>Hybrid</div>
+          </div>
+        </div>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">MySQL</span>
+        </div>
+        <p class="tl-desc">
+          Assisting with extracting, transforming, and loading financial and operational data into reporting systems to support audit analysis, data accuracy, and compliance reporting.
+        </p>
+      </div>
+    </div>
+
+    <div class="tl-item fade-up-2">
+      <div class="tl-dot"><i class="bi bi-people-fill"></i></div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <div>
+            <div class="tl-title">GWC</div>
+            <div class="tl-role">SPP Summer Advisor</div>
+            <div class="tl-date">2023 — Present</div>
+            <div class="tl-loc"><i class="bi bi-geo-alt-fill"></i>Remote</div>
+          </div>
+        </div>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">HTML</span>
+          <span class="tag">CSS</span><span class="tag">JavaScript</span>
+        </div>
+        <p class="tl-desc">
+          Guided students through web development fundamentals as part of the Girls Who Code Summer
+          Program, mentoring them in building real-world projects in a fully remote collaborative environment.
+        </p>
+      </div>
+    </div>
+
+    <div class="tl-item fade-up">
+      <div class="tl-dot"><i class="bi bi-rocket-takeoff"></i></div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <div>
+            <div class="tl-title">NASA</div>
+            <div class="tl-role">L'SPACE NPWEE SSA Mentor</div>
+            <div class="tl-date">2024</div>
+            <div class="tl-loc"><i class="bi bi-geo-alt-fill"></i>Tempe, Arizona — Hybrid</div>
+          </div>
+        </div>
+        <div class="tags">
+          <span class="tag">SQL</span><span class="tag">Excel</span>
+        </div>
+        <p class="tl-desc">
+          Led students throughout their participation in the NPWEE Academy, providing insight within NASA mission
+          procedures and protocols. Participated in the development of an improved relational database system
+          handling 6+ years of sensitive information.
+        </p>
+      </div>
+    </div>
+
+    <div class="tl-item fade-up">
+      <div class="tl-dot"><i class="bi bi-code-square"></i></div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <div>
+            <div class="tl-title">Arizona State University</div>
+            <div class="tl-role">Software Engineer</div>
+            <div class="tl-date">2023 — 2024</div>
+            <div class="tl-loc"><i class="bi bi-geo-alt-fill"></i>Tempe, Arizona — Hybrid</div>
+          </div>
+        </div>
+        <div class="tags">
+          <span class="tag">TypeScript</span><span class="tag">Vue.js</span>
+          <span class="tag">Nuxt</span><span class="tag">SCSS</span>
+          <span class="tag">Express</span><span class="tag">Colyseus</span>
+          <span class="tag">Docker</span><span class="tag">PostgreSQL</span>
+          <span class="tag">Redis</span><span class="tag">Elasticsearch</span>
+          <span class="tag">Python</span><span class="tag">Git</span>
+        </div>
+        <p class="tl-desc">
+          Designed and developed a multiplayer social science experiment game — <em>Port of Mars</em> —
+          for ASU's Interplanetary Initiative Department. The platform drove transactions totaling
+          more than $3.4 billion in volume.
+        </p>
+      </div>
+    </div>
+
+    <div class="tl-item fade-up-2">
+      <div class="tl-dot"><i class="bi bi-currency-exchange"></i></div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <div>
+            <div class="tl-title">247ERICPOINTCOM</div>
+            <div class="tl-role">Software Developer Intern</div>
+            <div class="tl-date">2022</div>
+            <div class="tl-loc"><i class="bi bi-geo-alt-fill"></i>Remote</div>
+          </div>
+        </div>
+        <div class="tags">
+          <span class="tag">Java</span><span class="tag">JavaScript</span><span class="tag">PHP</span>
+        </div>
+        <p class="tl-desc">
+          Designed websites and mobile applications (fintech) enabling clients to perform financial
+          exchange and trading services for consumers.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="education-section">
+  <div class="section-label">education</div>
+  <div class="section-title">Academic Background</div>
+  <div class="edu-grid">
+    <div class="edu-card fade-up">
+      <div class="edu-icon"><i class="bi bi-mortarboard-fill"></i></div>
+      <h3>B.S. Applied Computing</h3>
+      <p>Arizona State University</p>
+      <div class="year">ASU · Ira A. Fulton Schools of Engineering</div>
+    </div>
+    <div class="edu-card fade-up-2">
+      <div class="edu-icon"><i class="bi bi-heart-pulse-fill"></i></div>
+      <h3>B.S. Biomedical Sciences</h3>
+      <p>Arizona State University</p>
+      <div class="year">ASU · College of Health Solutions</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Made with <span>&#9829;</span> by Tiffany Kawamura &nbsp;&middot;&nbsp; All rights reserved &copy; 2026</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

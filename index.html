@@ -1,336 +1,275 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">  
-    <meta name="milestone" content="Portfolio">
-    <title id="section-1">Tiffany's Portfolio</title>  
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <script src="script.js"></script>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img id="profile-image" class="rounded-circle" src="/img/leo.png" alt="portfolio" height="50" width="52">
-        </a>
-        <div id="icons-col">
-            <a target="_blank" href="https://www.instagram.com/tiffany.kawamura/">
-              <img class="btn">
-                <i class="bi bi-instagram"></i>
-            </img>
-            </a>
-            <a target="_blank" href="https://www.facebook.com/tkawamura02">
-              <img class="btn">
-                <i class="bi bi-facebook"></i>
-            </img>
-            </a>
-            <a target="_blank" href="https://www.linkedin.com/in/tiffanykawamura/">
-              <img class="btn">
-                <i class="bi bi-linkedin"></i>
-            </img>
-            </a>
-            <a target="_blank" href="mailto:tkawamura02@gmail.com">
-              <img class="btn">
-                <i class="bi bi-envelope"></i>
-            </img>
-            </a>
-            <a target="_blank" href="https://github.com/Tkawamura02">
-              <img class="btn">
-                <i class="bi bi-github"></i>
-            </img>
-            </a>
-        </div>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tiffany Kawamura</title>
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── HERO ── */
+    .hero {
+      min-height: 90vh;
+      display: flex; align-items: center;
+      padding: 0 10vw;
+      position: relative; overflow: hidden;
+    }
+    .hero-glow {
+      position: absolute; top: -20%; right: -8%;
+      width: 55vw; height: 55vw; border-radius: 50%;
+      background: radial-gradient(circle, rgba(77,115,76,.09) 0%, transparent 68%);
+      pointer-events: none;
+    }
+    .hero-inner { 
+      max-width: 1200px; 
+      display: grid; 
+      grid-template-columns: 1fr 300px; 
+      gap: 60px; 
+      align-items: center; 
+    }
+    .hero-content { max-width: 680px; }
+    .hero-image {
+      display: flex; justify-content: center;
+      border-radius: 50%; overflow: hidden;
+      width: 250px; height: 250px;
+      border: 4px solid rgba(77,115,76,.2);
+    }
+    .hero-image img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .hero-tag {
+      display: inline-block;
+      font-size: 12px; font-weight: 600; letter-spacing: .12em;
+      color: var(--green); border: 1px solid rgba(77,115,76,.4);
+      border-radius: 20px; padding: 4px 16px; margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(40px, 6.5vw, 78px);
+      color: #d4e8d4; line-height: 1.08; margin-bottom: 8px;
+    }
+    .hero h1 em { font-style: italic; color: var(--green); }
+    #typed { color: var(--green); }
+    #typed::after { content: '|'; animation: blink .8s infinite; }
+    @keyframes blink { 0%,100%{opacity:1}50%{opacity:0} }
+    .hero-sub {
+      font-size: 17px; line-height: 1.75; color: var(--text);
+      margin: 24px 0 36px;
+    }
+    .hero-sub strong { color: var(--accent); font-weight: 600; }
+    .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 56px; }
+
+    /* scroll hint */
+    .scroll-hint {
+      display: flex; flex-direction: column; align-items: flex-start;
+      gap: 6px; color: #3a5a4a; font-size: 11px; letter-spacing: .1em;
+    }
+    .scroll-line {
+      width: 1px; height: 48px; background: linear-gradient(to bottom, var(--green), transparent);
+      animation: scrollPulse 2s ease infinite;
+    }
+    @keyframes scrollPulse { 0%,100%{opacity:.3;transform:scaleY(1)} 50%{opacity:1;transform:scaleY(.6)} }
+
+    /* ── SKILLS (on homepage) ── */
+    .skills-section { padding: 80px 10vw; }
+    .skills-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 16px;
+    }
+    .skill-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 28px 24px;
+      transition: border-color .2s, transform .2s;
+    }
+    .skill-card:hover { border-color: var(--border-h); transform: translateY(-4px); }
+    .skill-card-icon { font-size: 28px; color: var(--green); margin-bottom: 14px; }
+    .skill-card h3 { font-size: 16px; color: var(--text-h); font-weight: 600; margin-bottom: 4px; }
+
+    /* ── CAROUSEL ── */
+    .carousel-section { padding: 80px 10vw; text-align: center; }
+    .carousel {
+      position: relative; max-width: 600px; margin: 0 auto;
+      overflow: hidden; border-radius: 12px;
+    }
+    .carousel-inner {
+      display: flex; transition: transform 0.5s ease;
+    }
+    .carousel-inner img {
+      width: 100%; height: 400px; object-fit: cover; flex-shrink: 0;
+    }
+    .carousel-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(0,0,0,0.5); color: white; border: none;
+      padding: 10px; cursor: pointer; font-size: 18px;
+      border-radius: 50%; width: 40px; height: 40px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .carousel-btn.prev { left: 10px; }
+    .carousel-btn.next { right: 10px; }
+    .carousel-btn:hover { background: rgba(0,0,0,0.8); }
+    .about-strip {
+      padding: 64px 10vw;
+      border-top: 1px solid var(--border);
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+    }
+    .about-strip h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(22px, 3vw, 36px); color: var(--text-h); margin-bottom: 20px;
+    }
+    .about-strip p { font-size: 16px; line-height: 1.75; margin-bottom: 14px; }
+    .about-facts { display: flex; flex-direction: column; gap: 14px; }
+    .fact {
+      display: flex; align-items: flex-start; gap: 14px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; padding: 16px 20px;
+    }
+    .fact i { font-size: 22px; color: var(--green); flex-shrink: 0; margin-top: 2px; }
+    .fact-text strong { display: block; color: var(--text-h); font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+    .fact-text span { font-size: 13px; color: var(--text); }
+
+    @media (max-width: 760px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero-image { width: 200px; height: 200px; margin: 0 auto; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html"><img src="img/leo.png" alt="Leo logo"></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="experience.html">Experience</a>
+    <a href="projects.html">Projects</a>
+  </div>
+  <div class="nav-socials">
+    <a href="https://www.instagram.com/tiffany.kawamura/" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+    <a href="https://www.linkedin.com/in/tiffanykawamura/" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+    <a href="mailto:tkawamura02@gmail.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
+    <a href="https://github.com/Tkawamura02" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-tag fade-up">Data Engineer</div>
+      <h1 class="fade-up-2">Hello, I'm<br><span id="typed"></span></h1>
+      <p class="hero-sub fade-up-3">
+        Born and raised in Maui, Hawaii. Holder of dual degrees in
+        <strong>Applied Computing</strong> and <strong>Biomedical Sciences</strong>
+        from Arizona State University. Passionate advocate for vintage,
+        languages, and lifelong learning.
+      </p>
+      <div class="hero-cta fade-up-3">
+        <a href="projects.html" class="btn-primary">View my work</a>
+        <a href="experience.html" class="btn-ghost">My experience</a>
       </div>
-    </nav>
+      <div class="scroll-hint fade-up-3">
+        <div class="scroll-line"></div>
+        <span>scroll</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <!-- Intro section -->
-    	<section class="intro">
-        <div>
-          <h1 id="intro-hello" onLoad="typeIntro()" style="color: #4D734C; font-weight: bold; font-size: 8vh"></h1>
-          <p>
-            I'm a software engineer and data analyst born and raised in Maui, Hawaii with two degrees: 
-            <strong><em>B.S. Applied Computing and Biomedical Sciences</em></strong> from Arizona State University. A passionate
-            advocate for vintage, languages, and acquiring knowledge!
-          </p>
-        </div>
-    	</section>
+<section class="skills-section">
+  <div class="section-label">my expertise</div>
+  <div class="section-title">What I work with</div>
+  <div class="skills-grid">
+    <div class="skill-card fade-up">
+      <div class="skill-card-icon"><i class="bi bi-code-slash"></i></div>
+      <h3>Web Development</h3>
+      <div class="tags">
+        <span class="tag">Python</span><span class="tag">JavaScript</span>
+        <span class="tag">TypeScript</span><span class="tag">Java</span>
+        <span class="tag">HTML</span><span class="tag">CSS</span>
+        <span class="tag">Vue.js</span><span class="tag">Nuxt</span>
+      </div>
+    </div>
+    <div class="skill-card fade-up-2">
+      <div class="skill-card-icon"><i class="bi bi-bar-chart-line"></i></div>
+      <h3>Data Analysis</h3>
+      <div class="tags">
+        <span class="tag">Python</span><span class="tag">SQL</span>
+        <span class="tag">R</span><span class="tag">Excel</span>
+        <span class="tag">PostgreSQL</span><span class="tag">MySQL</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <!-- Expertise section-->
-      <section class="sections">
-        <h1 id="expertise-title titles"> // my expertise </h1>
-        <section id="expertise-cards">
-          <button id>
-            <div id="expertise-text">
-              <h4>Web Development</h4>
-              <p>
-                Python, JavaScript, TypeScript,
-                Java, SQL, C, C++, HTML, CSS
-              </p>
-            </div>
-          </button>
-          <button>
-            <div id="expertise-text">
-              <h4>Data Analysis</h4>
-              <p>
-                Python, SQL, R
-              </p>
-            </div>
-          </button>
-        </section>
-      </section>
+<section class="carousel-section">
+  <div class="section-label">gallery</div>
+  <div class="section-title">A glimpse of my world</div>
+  <div class="carousel">
+    <div class="carousel-inner">
+      <img src="img/home/carousel/image-1.jpg" alt="Gallery image 1">
+      <img src="img/home/carousel/image-6.jpg" alt="Gallery image 6">
+      <img src="img/home/carousel/image-3.jpg" alt="Gallery image 3">
+      <img src="img/home/carousel/image-4.jpg" alt="Gallery image 4">
+      <img src="img/home/carousel/image-5.jpg" alt="Gallery image 5">
+      <img src="img/home/carousel/image-7.jpg" alt="Gallery image 7">
+    </div>
+    <button class="carousel-btn prev" onclick="moveCarousel(-1)">&#10094;</button>
+    <button class="carousel-btn next" onclick="moveCarousel(1)">&#10095;</button>
+  </div>
+</section>
 
-      <!-- Experience section-->
-      <section class="sections">
-        <h1 id="experience-title titles"> // my experience </h1>
-        <div class="tab-container">
-          <div class="tab-row">
-            <a href="javascript:void(0)" onclick="switchTab(event, '00');">
-              <div class="tab-fourth tablink tab-bottombar tab-hover-light-grey tab-padding tab-border-highlight">00</div>
-            </a>
-            <a href="javascript:void(0)" onclick="switchTab(event, '01');">
-              <div class="tab-fourth tablink tab-bottombar tab-hover-light-grey tab-padding">01</div>
-            </a>
-            <a href="javascript:void(0)" onclick="switchTab(event, '02');">
-              <div class="tab-fourth tablink tab-bottombar tab-hover-light-grey tab-padding">02</div>
-            </a>
-            <a href="javascript:void(0)" onclick="switchTab(event, '03');">
-              <div class="tab-fourth tablink tab-bottombar tab-hover-light-grey tab-padding">03</div>
-            </a>
-          </div>
-          <div id="00" class="tab-container tabs">
-            <h4>L'SPACE NPWEE SSA Mentor @ NASA</h4>
-            <p><i class="bi bi-geo-alt-fill"></i> Tempe, Arizona (Hybrid)</p>
-            <div class="languages">
-              <button disabled class="pill-button">SQL</button>
-              <button disabled class="pill-button">Excel</button>
-            </div>
-            <p class="descriptions">
-              Led students throughout their participation in the NPWEE Academy providing insight
-              within NASA mission procedures and protocols. Participated in the development of an 
-              improved relational database system handling 6+ years of sensitive information. 
-            </p>
-          </div>
-          <div id="01" class="tab-container tabs" style="display:none">
-            <h4>SPP Summer Advisor @ GWC</h4>
-            <p><i class="bi bi-geo-alt-fill"></i> Remote </p>
-            <div class="languages">
-              <button disabled class="pill-button">Python</button>
-              <button disabled class="pill-button">HTML</button>
-              <button disabled class="pill-button">CSS</button>
-              <button disabled class="pill-button">JavaScript</button>
-            </div>
-            <p class="descriptions">
-              Led students throughout their participation in the NPWEE Academy providing insight
-              within NASA mission procedures and protocols. Participated in the development of an 
-              improved relational database system handling 6+ years of sensitive information. 
-            </p>
-          </div>
-          <div id="02" class="tab-container tabs" style="display:none">
-            <h4>Software Engineer @ ASU</h4>
-            <p><i class="bi bi-geo-alt-fill"></i> Tempe, Arizona (Hybrid) </p>
-            <div class="languages">
-              <button disabled class="pill-button">Python</button>
-              <button disabled class="pill-button">TypeScript</button>
-              <button disabled class="pill-button">SCSS</button>
-              <button disabled class="pill-button">Vue.js</button>
-              <button disabled class="pill-button">Nuxt</button>
-              <button disabled class="pill-button">Express</button>
-              <button disabled class="pill-button">Colyseus</button>
-              <button disabled class="pill-button">Git</button>
-              <button disabled class="pill-button">Docker</button>
-              <button disabled class="pill-button">PostgreSQL</button>
-              <button disabled class="pill-button">Redis</button>
-              <button disabled class="pill-button">Elasticsearch</button>
-            </div>
-            <p class="descriptions">
-              Designed and developed a social science experiment game for the ASU's 
-              Interplanetary Initiative Department: "Port of Mars" game driving transactions
-              totaling more than $3.4 billion in volume.
-            </p>
-          </div>
-          <div id="03" class="tab-container tabs" style="display:none">
-            <h4>Software Developer Intern @ 247ERICPOINTCOM</h4>
-            <p><i class="bi bi-geo-alt-fill"></i> Remote </p>
-            <div class="languages">
-              <button disabled class="pill-button">Java</button>
-              <button disabled class="pill-button">JavaScript</button>
-              <button disabled class="pill-button">PHP</button>
-            </div>
-            <p class="descriptions">
-              Designed websites and mobile apps (fintech applications) allowing clients to 
-              perform financial exchange and trading to consumers.
-            </p>
-          </div>
-        </div>
-      </section>
+<section class="about-strip">
+  <div>
+    <h2>A little about me</h2>
+    <p>
+      I'm a creator who loves building things that matter 
+      from multiplayer social-science games to fintech applications and data pipelines.
+    </p>
+    <p>
+      Outside of code I'm drawn to vintage finds, learning new languages,
+      and exploring the intersection of technology and the human experience.
+    </p>
+    <br>
+    <a href="experience.html" class="btn-ghost">See my experience &rarr;</a>
+  </div>
+  <div class="about-facts">
+    <div class="fact">
+      <i class="bi bi-mortarboard-fill"></i>
+      <div class="fact-text">
+        <strong>Arizona State University</strong>
+        <span>B.S. Applied Computing &amp; B.S. Biomedical Sciences</span>
+      </div>
+    </div>
+    <div class="fact">
+      <i class="bi bi-geo-alt-fill"></i>
+      <div class="fact-text">
+        <strong>Maui, Hawaii → Tempe, Arizona</strong>
+        <span>Born and raised in the islands</span>
+      </div>
+    </div>
+    <div class="fact">
+      <i class="bi bi-rocket-takeoff-fill"></i>
+      <div class="fact-text">
+        <strong>NASA &amp; ASU</strong>
+        <span>Mentored students and shipped production software</span>
+      </div>
+    </div>
+    <div class="fact">
+      <i class="bi bi-translate"></i>
+      <div class="fact-text">
+        <strong>Language enthusiast</strong>
+        <span>Passionate about communication in all its forms</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <!-- Projects section-->
-      <section class="sections">
-        <h1 id="projects-title titles"> // my projects </h1>
-        <div class="project-cards">
-          <div class="project-cards-row">
-            <div class="projects-ind-cards">
-              <a target="_blank" href="https://github.com/virtualcommons/port-of-mars"> 
-                <!--
-                  new project page
-                  github: https://github.com/virtualcommons/port-of-mars
-                  webpage: https://portofmars.asu.edu/
-                -->
-                <img class="card-img-top" src="/img/project/game/pom-website.jpg" alt="port of mars website">
-              </a>
-              <h4>PORT OF MARS</h4>
-              <p>Web Development</p>
-            </div>
-            <div class="projects-ind-cards">
-              <a target="_blank" href="https://github.com/Tkawamura02/pokemon_game"> 
-                <!--
-                  new project page
-                  github: https://github.com/Tkawamura02/pokemon_game
-                -->
-                <img class="card-img-top" src="/img/project/game/pokemon-game.png" alt="port of mars website">
-              </a>
-              <h4>POKEMON COPYCAT</h4>
-              <p>Web Development</p>
-            </div>
-            <div class="projects-ind-cards">
-              <a target="_blank" href="https://github.com/Tkawamura02/music-database"> 
-                <!--
-                  new project page
-                  github: https://github.com/Tkawamura02/music-database
-                -->
-                <img class="card-img-top" src="/img/project/database/music-query.png" alt="port of mars website">
-              </a>
-              <h4>MUSIC DATABASE</h4>
-              <p>SQL</p>
-            </div>
-          </div>
-          <div class="project-cards-row">
-            <div class="projects-ind-cards">
-              <a target="_blank" href="https://github.com/Tkawamura02/database-project"> 
-                <!--
-                  new project page
-                  github: https://github.com/Tkawamura02/database-project
-                -->
-                <img class="card-img-top" src="/img/project/database/project.png" alt="port of mars website">
-              </a>
-              <h4>HOTEL DATABASE</h4>
-              <p>SQL</p>
-            </div>
-            <div class="projects-ind-cards">
-              <a target="_blank" href="https://github.com/Tkawamura02/Scrabble_Wizard"> 
-                <!--
-                  new project page
-                  github: https://github.com/Tkawamura02/Scrabble_Wizard
-                -->
-                <img class="card-img-top" src="/img/project/java/scrabble-wizard.png" alt="port of mars website">
-              </a>
-              <h4>SCRABBLE</h4>
-              <p>Java</p>
-            </div>
-            <div class="projects-ind-cards">
-              <a target="_blank" href="https://github.com/Tkawamura02/tts_final_project"> 
-                <!--
-                  new project page
-                  github: https://github.com/Tkawamura02/tts_final_project
-                -->
-                <img class="card-img-top" src="/img/project/java/address-book.png" alt="port of mars website">
-              </a>
-              <h4>ADDRESS BOOK</h4>
-              <p>Java</p>
-            </div>
-          </div>
-          <div class="project-cards-row">
-            <div class="projects-ind-cards">
-              <a target="_blank" href="https://github.com/Tkawamura02/pokemon-api"> 
-                <!--
-                  new project page
-                  github: https://github.com/Tkawamura02/pokemon-api
-                  webpage: https://pokemon-api-search.tkawamura02.repl.co/
-                -->
-                <img class="card-img-top" src="/img/project/website/pokemon-website.png" alt="port of mars website">
-              </a>
-              <h4>POKEMON API</h4>
-              <p>Web Development</p>
-            </div>
-            <div class="projects-ind-cards">
-              <a target="_blank" href="https://github.com/Tkawamura02/encouragement"> 
-                <!--
-                  new project page
-                  github: https://github.com/Tkawamura02/encouragement
-                  webpage: https://words-of-encouragement.tkawamura02.repl.co/
-                -->
-                <img class="card-img-top" src="/img/project/website/encouragement-website.png" alt="port of mars website">
-              </a>
-              <h4>ENCOURAGEMENTS</h4>
-              <p>Web Development</p>
-            </div>
-            <div class="projects-ind-cards">
-              <a target="_blank" href="https://github.com/Tkawamura02/hotel-chateau"> 
-                <!--
-                  new project page
-                  github: https://github.com/Tkawamura02/hotel-chateau
-                  webpage: https://website-milestone.tkawamura02.repl.co/
-                -->
-                <img class="card-img-top" src="/img/project/website/hotel-website.png" alt="port of mars website">
-              </a>
-              <h4>HOTEL</h4>
-              <p>Web Development</p>
-            </div>
-          </div>
-          <div class="project-cards-row">
-            <div class="projects-ind-cards">
-              <a target="_blank" href="https://github.com/Tkawamura02/to_do_application"> 
-                <!--
-                  new project page
-                  github: https://github.com/Tkawamura02/to_do_application
-                  webpage: https://todoapplication--tkawamura02.repl.co/
-                -->
-                <img class="card-img-top" src="/img/project/website/to-do-website.png" alt="port of mars website">
-              </a>
-              <h4>LIST</h4>
-              <p>Web Development</p>
-            </div>
-            <div class="projects-ind-cards">
-              <a target="_blank" href="https://github.com/jalexandertech/TTS-Tip-Calculator"> 
-                <!--
-                  new project page
-                  github: https://github.com/jalexandertech/TTS-Tip-Calculator
-                  webpage: https://tts-tip-calculator.vercel.app/
-                -->
-                <img class="card-img-top" src="/img/project/website/tip-website.png" alt="port of mars website">
-              </a>
-              <h4>TIPPING</h4>
-              <p>Web Development</p>
-            </div>
-            <div class="projects-ind-cards">
-              <a target="_blank" href="https://github.com/Tkawamura02/dogs"> 
-                <!--
-                  new project page
-                  github: https://github.com/Tkawamura02/dogs
-                  webpage: https://tkawamura02.github.io/dogs/index.html
-                -->
-                <img class="card-img-top" src="/img/project/website/dogs-website.png" alt="port of mars website">
-              </a>
-              <h4>DOGS</h4>
-              <p>Web Development</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <!-- Footer section -->
-      <section id="footer">
-        <section class="footer-section">
-          <p>Made with love by Tiffany Kawamura</p>
-          <p>All rights reserved. © 2024</p>
-        </section>
-      </section>
+<footer>
+  <p>Made with <span>&#9829;</span> by Tiffany Kawamura &nbsp;&middot;&nbsp; All rights reserved &copy; 2026</p>
+</footer>
 
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
-  </body>
+<script src="script.js"></script>
+<script>
+  typeWriter(['Tiffany.','a builder.','an analyst.','a creator.'], 'typed');
+</script>
+</body>
 </html>
