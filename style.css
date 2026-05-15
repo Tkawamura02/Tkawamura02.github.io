@@ -117,6 +117,47 @@ footer span { color: var(--green); }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 700px) {
-  nav { padding: 12px 20px; }
-  .nav-links { gap: 16px; }
+  nav {
+    padding: 12px 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+  .nav-logo { margin-right: 0; flex-shrink: 0; }
+  .nav-links,
+  .nav-socials {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .nav-links { order: 2; }
+  .nav-socials { order: 3; }
+  .nav-links a { font-size: 13px; }
+  .nav-socials a { font-size: 18px; }
+  .btn-primary,
+  .btn-ghost {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+  }
+  .section-title { margin-bottom: 24px; }
+  footer { padding: 28px 20px 20px; }
+  .tags { justify-content: center; }
+  .page-hero { padding-left: 6vw; padding-right: 6vw; }
+  .page-hero p { max-width: 100%; }
+  .skills-section,
+  .projects-section,
+  .timeline-section,
+  .education-section,
+  .about-strip {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+  .about-strip { gap: 24px; }
+  .projects-grid { gap: 14px; }
+  .tl-item { grid-template-columns: 24px 1fr; gap: 0 16px; }
+  .tl-card { padding: 20px; }
+  .project-card .project-body { padding: 16px; }
 }
