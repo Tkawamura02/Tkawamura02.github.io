@@ -24,6 +24,12 @@ body {
   min-height: 100vh;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* ── NAV ── */
 nav {
   position: sticky; top: 0; z-index: 100;
@@ -160,4 +166,79 @@ footer span { color: var(--green); }
   .tl-item { grid-template-columns: 24px 1fr; gap: 0 16px; }
   .tl-card { padding: 20px; }
   .project-card .project-body { padding: 16px; }
+}
+
+@media (max-width: 520px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 14px;
+    text-align: center;
+  }
+  .nav-links,
+  .nav-socials {
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+  }
+  .nav-links a,
+  .nav-socials a {
+    font-size: 14px;
+  }
+  .hero {
+    padding: 0 5vw;
+    min-height: auto;
+  }
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .hero-image {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+  }
+  .hero h1 {
+    font-size: clamp(32px, 12vw, 48px);
+    text-align: center;
+    word-break: break-word;
+  }
+  .hero-sub {
+    font-size: 15px;
+    text-align: center;
+    margin: 20px auto 30px;
+    max-width: 100%;
+  }
+  .hero-cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-cta a {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  .scroll-hint {
+    align-items: center;
+  }
+  .scroll-line {
+    margin: 0 auto;
+  }
+  .carousel-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+  .about-strip {
+    gap: 18px;
+  }
+  .about-strip p {
+    font-size: 15px;
+  }
+  .fact {
+    gap: 10px;
+  }
+  .tags {
+    justify-content: center;
+  }
 }
